@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <div class="container my-5">
+    <h1 class="text-center">Register</h1>
+    <form action="/auth/register" method="POST" class="mx-auto" style="max-width: 400px;">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username (Email)</label>
+        <input type="email" class="form-control" id="username" name="username" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+      </div>
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" required>
+      </div>
+     

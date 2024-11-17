@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <div class="container text-center my-5">
+    <h1>Welcome, <%= user ? user.firstName : "Guest" %>!</h1>
+    <p>Create, share, and showcase your projects seamlessly.</p>
+  </div>
+
+  <footer class="bg-dark text-center text-white py-3">
+    <p>Created by Kamila, Group: BDA-2304</p>
+  </footer>
+</body>
+</html>

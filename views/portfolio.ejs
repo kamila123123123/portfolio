@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <div class="container my-5">
+    <h1 class="text-center">My Portfolio</h1>
+    <div class="row">
+      <% portfolioItems.forEach(item => { %>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div id="carousel<%= item._id %>" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <% item.images.forEach((image, index) => { %>
+                  <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                    <img src="<%= image %>" class="d-block w-100" alt="Image">
+                  </div>
+                <% }) %>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%= item._id %>" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel<%= item._id %>" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><%= item.title %></h5>
+              <p class="card-text"><%= item.description %></p>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-center text-white py-3">
+    <p>Created by Kamila, Group: BDA-2304</p>
+  </footer>
+</body>
+</html>
